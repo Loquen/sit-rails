@@ -62,6 +62,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   # Getting app production ready
-  gem 'pg'
+  gem 'pg', '~>0.11'
   	
 end
