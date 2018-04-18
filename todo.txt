@@ -1,0 +1,5 @@
+1. remove sidebar
+2. edit links: timer, tracker, 				signup/in/out
+3. create pages for timer, tracker
+4. on log in -> timer
+5. heroku working with devise
