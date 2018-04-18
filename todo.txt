@@ -1,5 +1,5 @@
-1. remove sidebar
-2. edit links: timer, tracker, 				signup/in/out
-3. create pages for timer, tracker
-4. on log in -> timer
-5. heroku working with devise
+1. heroku working with devise
+2. create timer countdown action
+3. create user_hours model for recorded time meditated
+3. on countdown finish -> info for user stored in user.hours
+4. tracker page displays user.hours
