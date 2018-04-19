@@ -1,4 +1,4 @@
-1. heroku working with devise
+1. 
 2. create timer countdown action
 3. create user_hours model for recorded time meditated
 3. on countdown finish -> info for user stored in user.hours
