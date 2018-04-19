@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .footer {
+ 	padding-top: 8em;
+ 	padding-bottom: 4em;
+ }
