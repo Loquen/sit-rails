@@ -11,7 +11,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 # jQuery for Bootstrap
 gem 'jquery-rails'
-# Devise Bootstrap styling
+# Devise Bootstrap styling, removed due to errors = require devise_bootstrap_views from application.css
 gem 'devise-bootstrap-views'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -28,6 +28,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+# Forman allows us to run API server and Webpacker server simultaneously 
+gem 'foreman', '~> 0.82.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -44,7 +47,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
