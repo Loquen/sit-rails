@@ -1,3 +1,3 @@
 task :start do
-	exec 'foreman start -p 3000'
+	exec 'rails s -p 3000'
 end
