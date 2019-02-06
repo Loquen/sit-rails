@@ -1,17 +1,17 @@
-import React from "react"
+import React from 'react';
 import PropTypes from "prop-types"
+//import './Timer.css';
 
-class Timer extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Greeting: {this.props.greeting}
-      </React.Fragment>
-    );
-  }
+import Countdown from './Countdown';
+
+class Timer extends React.Component{
+	render(){
+		return(
+			<React.Fragment>
+				<Countdown/>			
+			</React.Fragment>
+		);
+	}
 }
 
-Timer.propTypes = {
-  greeting: PropTypes.string
-};
-export default Timer
+export default Timer;

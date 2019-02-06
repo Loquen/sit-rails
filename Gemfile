@@ -34,6 +34,9 @@ gem 'webpacker'
 # Adding react-rails gem for rendering react
 gem 'react-rails'
 
+# For adding flexbox styling 
+gem 'flexbox-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
