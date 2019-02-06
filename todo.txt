@@ -1,5 +1,11 @@
 1. 
 2. create timer countdown action
+	take in a time from the user, in format of hrs, min, sec
+	convert that time into sec: hrs = time/3600, min = time/60, sec = time%60
+	while sec > 0 sec--
+	update DOM with new sec value
+
+
 3. create user_hours model for recorded time meditated
 3. on countdown finish -> info for user stored in user.hours
 4. tracker page displays user.hours
