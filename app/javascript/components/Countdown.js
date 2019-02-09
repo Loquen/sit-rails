@@ -134,24 +134,28 @@ class Countdown extends React.Component {
 	      <div className="container">
 	        <div className="Countdown row">
 	          <span className="col-md-3"></span> 
-	          <span className="timeValue col-md-2">H: {this.state.time.h}</span>
-	          <span className="timeValue col-md-2">M: {this.state.time.m}</span>
-	          <span className="timeValue col-md-2">S: {this.state.time.s} </span>
+	          <span className="timeValue col-md-2 col-xs-12 text-center">H: {this.state.time.h}</span>
+	          <span className="timeValue col-md-2 col-xs-12 text-center">M: {this.state.time.m}</span>
+	          <span className="timeValue col-md-2 col-xs-12 text-center">S: {this.state.time.s} </span>
 	          <span className="col-md-3"></span> 
 	        </div>
 	        <div className="Button row">
-	        	<span className="col-md-3"></span>
-	        	<button className="btn btn-light col-md-2" onClick={this.handleTimer}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
-	        	<span className="col-md-1"></span>
-	        	<button className="btn btn-light col-md-2" onClick={this.resetTimer}>Reset</button>
-	        	<span className="col-md-3"></span>
+	        	<span className="col-md-3 col-xs-2"></span>
+	        	<button className="btn btn-light col-md-2 col-xs-3" onClick={this.handleTimer}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
+	        	<span className="col-md-1 col-xs-2"></span>
+	        	<button className="btn btn-light col-md-2 col-xs-3" onClick={this.resetTimer}>Reset</button>
+	        	<span className="col-md-3 col-xs-2"></span>
 	        </div>
 	        <div>
 	          <audio id="bell" ref="audio_tag" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Bicycle-bell.wav"/>
 	        </div>
-	        <div className="SetTime">
+          <div className="my-3">
+
+          </div>
+	        <div className="SetTime row">
 	          <SetTime setTimeInParent={ this.setTimeCallback }/>
 	        </div>
+
 	      </div>
       </React.Fragment>
     );

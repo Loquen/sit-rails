@@ -54,23 +54,30 @@ class SetTime extends React.Component {
 	render () {
 	return (
 	  <React.Fragment>
-	        <form className="setForm row-center-start" onSubmit={this.handleSubmit}>
-	        	<label className="row">
-	          		 
-	          		<input className="col-md-3 col-sm-12" name="hour" type="number" value={this.state.hour} onChange={this.handleChange} />
-	        		: 
-	        	</label>
-	        	<label className="row">
-	          		
-	          		<input className="col-md-3 col-sm-12" name="minute" type="number" value={this.state.minute} onChange={this.handleChange} />
-	        		: 
-	        	</label>
-	        	<label className="row">
-	          		 
-	          		<input className="col-md-3 col-sm-12" name="second" type="number" value={this.state.second} onChange={this.handleChange} />
-	        		
-	        	</label>
-	        	<input className="btn btn-light" type="submit" value="Set Time" />
+	        <form className="setForm container" onSubmit={this.handleSubmit}>
+	        	<div className="form-group row">
+	        		<span className="col-md-3"></span>
+	        		<label className="col-md-2 text-center">Hours:</label>
+	          		<input className="col-md-4 col-sm-12" name="hour" type="number" value={this.state.hour} onChange={this.handleChange} /> 
+	        		<span className="col-md-3"></span>
+	        	</div>
+	        	<div className="form-group row">
+	        		<span className="col-md-3"></span>
+	        		<label className="col-md-2 text-center">Minutes:</label>
+	          		<input className="col-md-4 col-sm-12" name="minute" type="number" value={this.state.minute} onChange={this.handleChange} /> 
+	        		<span className="col-md-3"></span>
+	        	</div>
+	        	<div className="form-group row">
+	        		<span className="col-md-3"></span>
+	        		<label className="col-md-2 text-center">Seoncds:</label>
+	          		<input className="col-md-4 col-sm-12" name="second" type="number" value={this.state.second} onChange={this.handleChange} /> 
+	        		<span className="col-md-3"></span>
+	        	</div>
+	        	<div className="form-group row">
+	        		<span className="col-md-5 col-xs-3"></span>
+	        		<input className="btn btn-light col-md-2 col-xs-6" type="submit" value="Set Time" />
+	        		<span className="col-md-5 col-xs-3"></span>
+	        	</div>
 	        </form>
 	  </React.Fragment>
 	);
