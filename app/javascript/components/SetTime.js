@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import timer from "../../assets/stylesheets/timer.css"
+
 class SetTime extends React.Component {
   constructor(props) {
 	    super(props);
@@ -54,29 +56,39 @@ class SetTime extends React.Component {
 	render () {
 	return (
 	  <React.Fragment>
+	  	<hr className="spacer"/>
 	        <form className="setForm container" onSubmit={this.handleSubmit}>
+	        	<div className="form-group row spacer">
+	        		<span className="col-md-3"></span>
+	        		<label className="col-md-2 col-xs-12 text-center">Hours:</label>
+	        		<div>
+		        		<span className="col-xs-3 col-md-1"></span>
+		          		<input className="col-md-2 col-xs-6 text-center" name="hour" type="number" value={this.state.hour} onChange={this.handleChange} /> 
+		        		<span className="col-md-4 col-xs-3"></span>
+		        	</div>
+		        </div>
 	        	<div className="form-group row">
 	        		<span className="col-md-3"></span>
-	        		<label className="col-md-2 text-center">Hours:</label>
-	          		<input className="col-md-4 col-sm-12" name="hour" type="number" value={this.state.hour} onChange={this.handleChange} /> 
-	        		<span className="col-md-3"></span>
-	        	</div>
+	        		<label className="col-md-2 col-xs-12 text-center">Minutes:</label>
+	        		<div>
+		        		<span className="col-xs-3 col-md-1"></span>
+		          		<input className="col-md-2 col-xs-6 text-center" name="minute" type="number" value={this.state.minute} onChange={this.handleChange} /> 
+		        		<span className="col-md-4 col-xs-3"></span>
+		        	</div>
+		        </div>
 	        	<div className="form-group row">
 	        		<span className="col-md-3"></span>
-	        		<label className="col-md-2 text-center">Minutes:</label>
-	          		<input className="col-md-4 col-sm-12" name="minute" type="number" value={this.state.minute} onChange={this.handleChange} /> 
-	        		<span className="col-md-3"></span>
-	        	</div>
-	        	<div className="form-group row">
-	        		<span className="col-md-3"></span>
-	        		<label className="col-md-2 text-center">Seoncds:</label>
-	          		<input className="col-md-4 col-sm-12" name="second" type="number" value={this.state.second} onChange={this.handleChange} /> 
-	        		<span className="col-md-3"></span>
-	        	</div>
-	        	<div className="form-group row">
-	        		<span className="col-md-5 col-xs-3"></span>
+	        		<label className="col-md-2 col-xs-12 text-center">Seconds:</label>
+	        		<div>
+		        		<span className="col-xs-3 col-md-1"></span>
+		          		<input className="col-md-2 col-xs-6 text-center" name="second" type="number" value={this.state.second} onChange={this.handleChange} /> 
+		        		<span className="col-md-4 col-xs-3"></span>
+		        	</div>
+		        </div>
+	        	<div className="form-group row spacer">
+	        		<span className="col-md-3 col-xs-3"></span>
 	        		<input className="btn btn-light col-md-2 col-xs-6" type="submit" value="Set Time" />
-	        		<span className="col-md-5 col-xs-3"></span>
+	        		<span className="col-md-7 col-xs-3"></span>
 	        	</div>
 	        </form>
 	  </React.Fragment>
