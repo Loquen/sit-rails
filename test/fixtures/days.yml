@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2019-02-10
+  day: 2019-02-20
   time: 1
 
 two:
-  date: 2019-02-10
+  day: 2019-02-20
   time: 1

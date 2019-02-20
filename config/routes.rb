@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :days
   get 'tracker', to: 'tracker#home'
   get 'timer', to: 'timer#new'
   devise_for :users
