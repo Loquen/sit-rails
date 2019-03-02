@@ -10,6 +10,7 @@ class Countdown extends React.Component {
     
     this.state = { 
       time: {}, 
+      elapsedTime: 0,
       seconds: 1500,
       isRunning: false,
       userSeconds: 1500
@@ -89,9 +90,11 @@ class Countdown extends React.Component {
   countDown = () => {
     // Remove one second, set state so a re-render happens.
     let seconds = this.state.seconds - 1;
+    let totalTime = this.state.elapsedTime + 1;
     this.setState({
       time: this.secondsToTime(seconds),
-      seconds: seconds
+      seconds: seconds,
+      elapsedTime: totalTime
     });
     
     // Check if we're at zero.
