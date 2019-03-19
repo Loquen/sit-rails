@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import timer from "../../assets/stylesheets/timer.css"
+import "../../assets/stylesheets/timer.css"
 
 class SetTime extends React.Component {
   constructor(props) {

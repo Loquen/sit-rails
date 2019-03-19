@@ -2,12 +2,31 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Chartify from 'chartify'; // For displaying data
+import Chart from "react-apexcharts";
+
+import "../../assets/stylesheets/chart.scss"
 
 class DisplayTime extends React.Component {
 	constructor(props) {
-    	super(props);
+	    super(props);
 
-    }
+	    this.state = {
+	      options: {
+	        chart: {
+	          id: "basic-bar"
+	        },
+	        xaxis: {
+	          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+	        }
+	      },
+	      series: [
+	        {
+	          name: "series-1",
+	          data: [30, 40, 45, 50, 49, 60, 70, 91]
+	        }
+	      ]
+	    };
+  	}
 
   	render () {
 
@@ -53,12 +72,21 @@ class DisplayTime extends React.Component {
 
 	    return (
 	        <React.Fragment>
-		      	<h2>{this.props.value}</h2>
-		      	<Chartify 
-    				data={data} 
-    				container="films-container" 
-    				config={config} 
-				/>
+	        	<div className="chart-container">
+			      	<h2>{this.props.value}</h2>
+			      	<Chartify 
+	    				data={data} 
+	    				container="times-container" 
+	    				config={config} 
+					/>
+				</div>
+
+				<Chart
+	              	options={this.state.options}
+	              	series={this.state.series}
+	              	type="bar"
+	              	width="500"
+            	/>
 	      </React.Fragment>
 	    );
   }

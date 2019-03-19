@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 
 import DisplayTime from './DisplayTime';
 
+import "../../assets/stylesheets/tracker.scss"
+
 class Track extends React.Component {
 	constructor(props) {
     	super(props);
@@ -24,17 +26,19 @@ class Track extends React.Component {
   	render () {
 	    return (
 	        <React.Fragment>
-		      	<h2>Track</h2>
-		      	<p>Here is your personal meditation data</p>
-					<div>Pick your timeframe:
-			            <select value={this.state.value} onChange={this.handleChange}>
-			            	<option value="Week">Week</option>
-							<option value="Month">Month</option>
-							<option value="Year">Year</option>
-			            </select>
-		            </div>
-			        
-		      	<DisplayTime value={this.state.value}/>
+	        	<div className="container">
+	        		<div className="row">
+				      	<h3 className="headline">Here is your personal meditation data</h3>
+						<div className="selector">Pick your timeframe:
+				            <select value={this.state.value} onChange={this.handleChange}>
+				            	<option value="Week">Week</option>
+								<option value="Month">Month</option>
+								<option value="Year">Year</option>
+				            </select>
+			            </div>
+		            </div>				    
+			      	<DisplayTime value={this.state.value}/>
+		      	</div>
 	        </React.Fragment>
 	    );
   }
