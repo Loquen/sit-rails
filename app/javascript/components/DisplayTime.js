@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Chartify from 'chartify'; // For displaying data
+//import Chartify from 'chartify'; // For displaying data
 import Chart from "react-apexcharts";
 
 import "../../assets/stylesheets/chart.scss"
@@ -74,11 +74,6 @@ class DisplayTime extends React.Component {
 	        <React.Fragment>
 	        	<div className="chart-container">
 			      	<h2>{this.props.value}</h2>
-			      	<Chartify 
-	    				data={data} 
-	    				container="times-container" 
-	    				config={config} 
-					/>
 				</div>
 
 				<Chart
