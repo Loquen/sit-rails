@@ -7,81 +7,74 @@ import Chart from "react-apexcharts";
 import "../../assets/stylesheets/chart.scss"
 
 class DisplayTime extends React.Component {
+
 	constructor(props) {
 	    super(props);
 
-	    this.state = {
+	    /*this.state = {
+	      period: this.props.value,
 	      options: {
 	        chart: {
 	          id: "basic-bar"
 	        },
 	        xaxis: {
-	          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+	          categories: period
 	        }
 	      },
 	      series: [
 	        {
 	          name: "series-1",
-	          data: [30, 40, 45, 50, 49, 60, 70, 91]
+	          data: data
 	        }
 	      ]
-	    };
+	    };*/
   	}
 
   	render () {
+  		let week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	    let month = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]; // we will just loop over 1 to n when displaying
+	    let year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  		// Data prop is a dataset that should be an array of objects:
-  		let data = [{
-	    		x_value: '20.11.2016', // This will be our date value
-	    		y_value: 5,			   // This will be our total hours value
-	    		title: 'Hours'
-    		},
-    		{
-	    		x_value: '20.9.2016',
-	    		y_value: 2,
-	    		title: 'Hours'
-			},
-			{
-	    		x_value: 'Nov',
-	    		y_value: 3,
-	    		title: 'Hours'
-			},
-			{
-	    		x_value: '20.11.2016',
-	    		y_value: 8,
-	    		title: 'Hours'
-			},
-			{
-	    		x_value: '20.11.2016',
-	    		y_value: 1,
-	    		title: 'Hours'
-			}
-		];
+	    let testDataWeek = [10, 13, 4, 23, 3, 8, 19];
+	    let testDataMonth = [10, 13, 6, 5, 7, 8, 39, 24, 23, 3, 8, 19,10, 13, 9, 5, 7, 8, 39, 24, 23, 3, 8, 19,10, 13, 5, 5, 7, 8, 39];
+	    let testDataYear = [10, 13, 3, 5, 7, 8, 39, 24, 23, 3, 8, 19];
 
-		let config = {
-		    theme: 'blue',
-		    width: 50,			      
-		    height: 10,		
-		    box_size: 20,
-		    box_radius: 8,
-		    line: false,
-		    line_only: false,
-		    bordered: false
-		};
+  		let period = week;
+	    let data = testDataWeek;
+  		
+  		if(this.props.value === 'Month'){
+  			period = month;
+	    	data = testDataMonth;
+  		}else if(this.props.value === 'Year'){
+  			period = year;
+	    	data = testDataYear;
+  		}
 
-
+  		let options =  {
+	        chart: {
+	          id: "basic-bar"
+	        },
+	        xaxis: {
+	          categories: period
+	        }
+	      };
+	    let series =  [
+	        {
+	          name: "series-1",
+	          data: data
+	        }
+	      ]
 	    return (
 	        <React.Fragment>
 	        	<div className="chart-container">
 			      	<h2>{this.props.value}</h2>
-				</div>
-
-				<Chart
-	              	options={this.state.options}
-	              	series={this.state.series}
-	              	type="bar"
-	              	width="500"
-            	/>
+					<Chart
+		              	options={options}
+		              	series={series}
+		              	type="bar"
+		              	width="500"
+	            	/>
+            	</div>
 	      </React.Fragment>
 	    );
   }
