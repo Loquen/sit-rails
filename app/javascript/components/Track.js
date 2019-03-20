@@ -24,11 +24,17 @@ class Track extends React.Component {
   	}
 
   	render () {
+  		let data = this.props.week
+
+  		if(this.state.value === 'Month'){
+  			data = this.props.month
+  		}
 	    return (
 	        <React.Fragment>
 	        	<div className="container">
 	        		<div className="row">
-				      	<h3 className="headline">Here is your personal meditation data</h3>
+				      	<h3 className="headline">Here is {this.props.email}'s personal meditation data</h3>
+				      	
 						<div className="selector">Pick your timeframe:
 				            <select value={this.state.value} onChange={this.handleChange}>
 				            	<option value="Week">Week</option>
@@ -37,7 +43,7 @@ class Track extends React.Component {
 				            </select>
 			            </div>
 		            </div>				    
-			      	<DisplayTime value={this.state.value}/>
+			      	<DisplayTime value={this.state.value} data={data}/>
 		      	</div>
 	        </React.Fragment>
 	    );
